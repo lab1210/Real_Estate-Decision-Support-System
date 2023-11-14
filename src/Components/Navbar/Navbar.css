@@ -1,0 +1,98 @@
+.Navbar{
+    height:100px;
+    background:#1A1B27 ;
+    box-shadow: 1px 2px 1px #1A1B27  ;
+    display: flex;
+    gap:40px;
+    margin-bottom: -28px;
+    width:100%
+}
+.logo{
+    display:flex;
+    gap:5px;
+    padding:20px;
+    margin-left: 40px;
+}
+.logo a{
+    text-decoration: none;
+}
+.logo img{
+    width:40px;
+    height:40px
+}
+.logo p{
+    font-family: Poppins;
+    color: #F2f3f6;
+    font-weight: 300;
+    font-size: 20px;
+    
+}
+.links ul{
+    list-style-type: none;
+    display: flex;
+    padding-top:15px;
+    gap:50px;
+}
+.links li{
+    color: #F2f3f6;
+    cursor:pointer;
+}
+.links a{
+    color: #F2f3f6;
+     text-decoration: none;
+}
+.links li :hover{
+    color:#A8e28b
+}
+.links hr{
+    background:#A8e28b;
+    border-radius: 10px;
+    border: none;
+    width: 80%;
+    height: 3px;
+}
+.loginsignup button{
+    height:30px;
+    width:90px;
+    border-radius: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 100;
+    cursor:pointer;
+
+}
+.btnreg{
+    background: #A8e28b;
+}
+.btnlogin{
+    background-color: #F2f3f6;
+
+}
+.loginsignup{
+    padding-top:25px;
+    gap:10px;
+    display: flex;
+
+}
+
+.searchbar{
+    padding-top:30px;
+    
+}
+.searchbar input{
+    border-radius: 10px;
+    width: 300px;
+    height: 30px;
+}
+
+@media (max-width:768px) {
+    .links ul{
+        display: none;
+    }
+    .searchbar input{
+        border-radius: 10px;
+        width: 180px;
+        height: 30px;
+    }
+    
+}
