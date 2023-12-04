@@ -1,38 +1,51 @@
-import React, { useState } from 'react'
-import "./Navbar.css"
-import logo from "../Assets/eglogo.png"
-
-import { Link } from 'react-router-dom'
-import Dropdown from '../dropdown/dropdown'
-import Toggle from '../Toggle_navbar/Toggle'
+import React, { useState } from "react";
+import Logo from "../Assets/logo.png";
+import user from "../Assets/person-circle.svg";
+import "./Navbar.css";
+import { Link } from "react-router-dom";
 const Navbar = () => {
-  const [Menu, setMenu] = useState("Home")
+  const [menu,setMenu]=useState("home")
   return (
-    <div className='Navbar'>
-      <div className="logo">
-        <Link to="/">  <img onClick={() => setMenu("Home")} src={logo} alt="" /></Link>
-        <Link to="/"><p onClick={() => setMenu("Home")}>CityCanvas</p></Link>
+    <>
+      <div className="Support">
+        <p>
+          Need help making a decision? Use our{" "}
+          <span>
+            <i className="bi bi-lightbulb-fill"></i> <Link  to="/Smart_Property_Finder">Smart Property Finder</Link>
+          </span>
+        </p>
       </div>
-      <div className="searchbar">
-        <input type="text" />
+      <div className="Navbar">
+        <div className="logo">
+          <img src={Logo} alt="" />
+          <p>PropSage</p>
+        </div>
+        <div className="Search">
+          <input type="text" placeholder="Search property...." />
+          <button>
+            <i className="bi bi-search"></i>
+          </button>
+        </div>
 
-      </div>
-      <div className="links">
-        <ul>
-          <li onClick={() => { setMenu("Home") }}> <Link to="/">Home</Link>{Menu === "Home" ? <hr /> : <></>}</li>
-          <li onClick={() => setMenu("Listings")}><Link to="/Property_Listings"> Listings</Link>{Menu === "Listings" ? <hr /> : <></>}</li>
-          <li onClick={() => setMenu("About")}><Link to="/About">About</Link>{Menu === "About" ? <hr /> : <></>}</li>
-          <li onClick={() => setMenu("Contact")}><Link to="/Contact">Contact</Link>{Menu === "Contact" ? <hr /> : <></>}</li>
-        </ul>
-      </div>
+        <div className="links">
+          <ul>
+            <li onClick={()=>{setMenu("home")}}><Link to="/">Home</Link>{menu==='home' ? <hr/>:<></>}</li>
+            <li onClick={()=>{setMenu("about")}} ><Link to="/About-Us">About</Link>{menu==='about' ? <hr/>:<></>}</li >
+            <li onClick={()=>{setMenu("listing")}}><Link to="/Property-Listing">Properties</Link>{menu==='listing' ? <hr/>:<></>}</li>
+          </ul>
+        </div>
 
-      <div className="loginsignup">
-        {/* <button className='btnlogin'>Login</button>
-        <button className='btnreg'>SignUp</button> */}
+        <div className="btn">
+          <button className="login">Login</button>
+          <button className="register">Sign Up</button>
+        </div>
+        <div className="profile">
+          <img src={user} alt="" />
+        </div>
       </div>
-      <Dropdown/>
-      <Toggle/>
-    </div>
-  )
-}
-export default Navbar
+      <br />
+    </>
+  );
+};
+
+export default Navbar;
